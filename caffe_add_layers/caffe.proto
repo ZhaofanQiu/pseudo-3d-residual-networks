@@ -1,0 +1,48 @@
+message Pooling3DParameter {
+  enum PoolMethod {
+    MAX = 0;
+    AVE = 1;
+    STOCHASTIC = 2;
+  }
+  optional PoolMethod pool = 1 [default = MAX]; // The pooling method
+  // Pad, kernel size, and stride are all given as a single value for equal
+  // dimensions in height and width or as Y, X pairs.
+  optional uint32 pad = 2 [default = 0]; // The padding size (equal in Y, X)
+  optional uint32 pad_h = 5 [default = 0]; // The padding height
+  optional uint32 pad_w = 6 [default = 0]; // The padding width
+  optional uint32 pad_l = 7 [default = 0]; // The padding length  
+  optional uint32 kernel_size = 3; // The kernel size (square)
+  optional uint32 kernel_h = 8; // The kernel height
+  optional uint32 kernel_w = 9; // The kernel width
+  optional uint32 kernel_l = 10; // The kernel length
+  optional uint32 stride = 4 [default = 1]; // The stride (equal in Y, X)
+  optional uint32 stride_h = 11; // The stride height
+  optional uint32 stride_w = 12; // The stride width
+  optional uint32 stride_l = 13 [default = 1]; // The stride length
+  enum Engine {
+    DEFAULT = 0;
+    CAFFE = 1;
+    CUDNN = 2;
+  }
+  optional Engine engine = 14 [default = DEFAULT];
+    // If global_pooling then it will pool over the size of the bottom by doing
+  // kernel_h = bottom->height and kernel_w = bottom->width
+  optional bool global_pooling = 15 [default = false];
+}
+
+message BNParameter {
+  optional FillerParameter slope_filler = 1;
+  optional FillerParameter bias_filler = 2;
+  optional float momentum = 3 [default = 0.9];
+  optional float eps = 4 [default = 1e-5];
+  // If true, will use the moving average mean and std for training and test.
+  // Will override the lr_param and freeze all the parameters.
+  // Make sure to initialize the layer properly with pretrained parameters.
+  optional bool frozen = 5 [default = false];
+  enum Engine {
+    DEFAULT = 0;
+    CAFFE = 1;
+    CUDNN = 2;
+  }
+  optional Engine engine = 6 [default = DEFAULT];
+}
