@@ -29,7 +29,8 @@ If you use these models in your research, please cite:
 ### Implementation
 0. We implement the P3D ResNet using our modified Caffe on Windows platform. For fast utilization of our model, here we give the addtional layers used in the network. So you can easily add these layers to your own Caffe branch or [Caffe master branch](https://github.com/BVLC/caffe) to support P3D ResNet.
 0. In the P3D ResNet, all the blobs are 5D-blobs (num, channels, length, height, width). Some layers in early-version Caffe may only support 4D blobs due to the use of Blob<Dtype>::num(), Blob<Dtype>::channels(), Blob<Dtype>::height() and Blob<Dtype>::width(). You may need to replace these callings with Blob<Dtype>::shape(i).
-0. When training the network, to speedup the network and reduce the memory demand, we use cudnnn implementation for conv_layer, relu_layer, bn_layer.
+0. When training the network, to speedup the network and reduce the memory demand, we use cudnn implementation for conv_layer, relu_layer, bn_layer.
+0. P3D ResNet for optical flow stream, ResNext/DenseNet/SENet with P3D convolution and P3D ResNet with lighter weights are in the plan.
 0. Our custom Caffe and training/finetuning setting files will be pulic soon.
 
 ### Models
