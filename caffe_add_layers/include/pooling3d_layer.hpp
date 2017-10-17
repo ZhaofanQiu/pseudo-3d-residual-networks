@@ -13,7 +13,7 @@
 #include <string>
 #include <utility>
 #include <vector>
-
+#include "float.h"
 #include "leveldb/db.h"
 #include "boost/scoped_ptr.hpp"
 
@@ -23,7 +23,7 @@
 #include "caffe/proto/caffe.pb.h"
 #include "caffe/net.hpp"
 
-#include "caffe/video_layers/video_common.hpp"
+#include "caffe/layers/video_common.hpp"
 
 namespace caffe {
 	/**

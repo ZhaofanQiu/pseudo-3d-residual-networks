@@ -24,6 +24,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 64
     bias_term: false
     pad: 0
@@ -36,8 +37,10 @@ layer {
     stride: 2
     stride: 2
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
+
   }
 }
 layer {
@@ -74,6 +77,9 @@ layer {
 layer {
   name: "conv1_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn_conv1"
   top: "bn_conv1"
 }
@@ -102,6 +108,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -114,7 +121,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -159,6 +167,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 64
     bias_term: false
     pad: 0
@@ -171,7 +180,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -209,6 +219,9 @@ layer {
 layer {
   name: "res2a_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn2a_branch2a"
   top: "bn2a_branch2a"
 }
@@ -222,6 +235,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 64
     bias_term: false
     pad: 0
@@ -234,7 +248,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -272,6 +287,9 @@ layer {
 layer {
   name: "res2a_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn2a_branch2b"
   top: "bn2a_branch2b"
 }
@@ -285,6 +303,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 64
     bias_term: false
     pad: 1
@@ -297,7 +316,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -335,6 +355,9 @@ layer {
 layer {
   name: "res2a_branch2b_t_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn2a_branch2b_t"
   top: "bn2a_branch2b_t"
 }
@@ -348,6 +371,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -360,7 +384,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -408,6 +433,9 @@ layer {
 layer {
   name: "res2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res2a"
   top: "res2a"
 }
@@ -421,6 +449,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 64
     bias_term: false
     pad: 0
@@ -433,7 +462,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -471,6 +501,9 @@ layer {
 layer {
   name: "res2b_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn2b_branch2a"
   top: "bn2b_branch2a"
 }
@@ -484,6 +517,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 64
     bias_term: false
     pad: 0
@@ -496,7 +530,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -534,6 +569,9 @@ layer {
 layer {
   name: "res2b_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn2b_branch2b"
   top: "bn2b_branch2b"
 }
@@ -547,6 +585,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 64
     bias_term: false
     pad: 1
@@ -559,7 +598,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -609,6 +649,9 @@ layer {
 layer {
   name: "res2b_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res2b_branch2b_st"
   top: "res2b_branch2b_st"
 }
@@ -622,6 +665,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -634,7 +678,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -682,6 +727,9 @@ layer {
 layer {
   name: "res2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res2b"
   top: "res2b"
 }
@@ -695,6 +743,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 64
     bias_term: false
     pad: 0
@@ -707,7 +756,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -745,6 +795,9 @@ layer {
 layer {
   name: "res2c_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn2c_branch2a"
   top: "bn2c_branch2a"
 }
@@ -758,6 +811,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 64
     bias_term: false
     pad: 0
@@ -770,7 +824,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -808,6 +863,9 @@ layer {
 layer {
   name: "res2c_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn2c_branch2b"
   top: "bn2c_branch2b"
 }
@@ -821,6 +879,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 64
     bias_term: false
     pad: 1
@@ -833,7 +892,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -883,6 +943,9 @@ layer {
 layer {
   name: "res2c_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res2c_branch2b_st"
   top: "res2c_branch2b_st"
 }
@@ -896,6 +959,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -908,7 +972,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -956,6 +1021,9 @@ layer {
 layer {
   name: "res2c_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res2c"
   top: "res2c"
 }
@@ -984,6 +1052,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 512
     bias_term: false
     pad: 0
@@ -996,7 +1065,8 @@ layer {
     stride: 2
     stride: 2
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -1041,6 +1111,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 0
@@ -1053,7 +1124,8 @@ layer {
     stride: 2
     stride: 2
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -1091,6 +1163,9 @@ layer {
 layer {
   name: "res3a_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn3a_branch2a"
   top: "bn3a_branch2a"
 }
@@ -1104,6 +1179,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 0
@@ -1116,7 +1192,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -1154,6 +1231,9 @@ layer {
 layer {
   name: "res3a_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn3a_branch2b"
   top: "bn3a_branch2b"
 }
@@ -1167,6 +1247,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 1
@@ -1179,7 +1260,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -1217,6 +1299,9 @@ layer {
 layer {
   name: "res3a_branch2b_t_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn3a_branch2b_t"
   top: "bn3a_branch2b_t"
 }
@@ -1230,6 +1315,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 512
     bias_term: false
     pad: 0
@@ -1242,7 +1328,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -1290,6 +1377,9 @@ layer {
 layer {
   name: "res3a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res3a"
   top: "res3a"
 }
@@ -1303,6 +1393,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 0
@@ -1315,7 +1406,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -1353,6 +1445,9 @@ layer {
 layer {
   name: "res3b1_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn3b1_branch2a"
   top: "bn3b1_branch2a"
 }
@@ -1366,6 +1461,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 0
@@ -1378,7 +1474,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -1416,6 +1513,9 @@ layer {
 layer {
   name: "res3b1_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn3b1_branch2b"
   top: "bn3b1_branch2b"
 }
@@ -1429,6 +1529,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 1
@@ -1441,7 +1542,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -1491,6 +1593,9 @@ layer {
 layer {
   name: "res3b1_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res3b1_branch2b_st"
   top: "res3b1_branch2b_st"
 }
@@ -1504,6 +1609,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 512
     bias_term: false
     pad: 0
@@ -1516,7 +1622,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -1564,6 +1671,9 @@ layer {
 layer {
   name: "res3b1_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res3b1"
   top: "res3b1"
 }
@@ -1577,6 +1687,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 0
@@ -1589,7 +1700,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -1627,6 +1739,9 @@ layer {
 layer {
   name: "res3b2_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn3b2_branch2a"
   top: "bn3b2_branch2a"
 }
@@ -1640,6 +1755,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 0
@@ -1652,7 +1768,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -1690,6 +1807,9 @@ layer {
 layer {
   name: "res3b2_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn3b2_branch2b"
   top: "bn3b2_branch2b"
 }
@@ -1703,6 +1823,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 1
@@ -1715,7 +1836,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -1765,6 +1887,9 @@ layer {
 layer {
   name: "res3b2_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res3b2_branch2b_st"
   top: "res3b2_branch2b_st"
 }
@@ -1778,6 +1903,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 512
     bias_term: false
     pad: 0
@@ -1790,7 +1916,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -1838,6 +1965,9 @@ layer {
 layer {
   name: "res3b2_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res3b2"
   top: "res3b2"
 }
@@ -1851,6 +1981,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 0
@@ -1863,7 +1994,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -1901,6 +2033,9 @@ layer {
 layer {
   name: "res3b3_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn3b3_branch2a"
   top: "bn3b3_branch2a"
 }
@@ -1914,6 +2049,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 0
@@ -1926,7 +2062,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -1964,6 +2101,9 @@ layer {
 layer {
   name: "res3b3_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn3b3_branch2b"
   top: "bn3b3_branch2b"
 }
@@ -1977,6 +2117,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 1
@@ -1989,7 +2130,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -2027,6 +2169,9 @@ layer {
 layer {
   name: "res3b3_branch2b_t_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn3b3_branch2b_t"
   top: "bn3b3_branch2b_t"
 }
@@ -2040,6 +2185,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 512
     bias_term: false
     pad: 0
@@ -2052,7 +2198,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -2100,6 +2247,9 @@ layer {
 layer {
   name: "res3b3_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res3b3"
   top: "res3b3"
 }
@@ -2113,6 +2263,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 0
@@ -2125,7 +2276,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -2163,6 +2315,9 @@ layer {
 layer {
   name: "res3b4_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn3b4_branch2a"
   top: "bn3b4_branch2a"
 }
@@ -2176,6 +2331,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 0
@@ -2188,7 +2344,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -2226,6 +2383,9 @@ layer {
 layer {
   name: "res3b4_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn3b4_branch2b"
   top: "bn3b4_branch2b"
 }
@@ -2239,6 +2399,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 1
@@ -2251,7 +2412,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -2301,6 +2463,9 @@ layer {
 layer {
   name: "res3b4_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res3b4_branch2b_st"
   top: "res3b4_branch2b_st"
 }
@@ -2314,6 +2479,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 512
     bias_term: false
     pad: 0
@@ -2326,7 +2492,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -2374,6 +2541,9 @@ layer {
 layer {
   name: "res3b4_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res3b4"
   top: "res3b4"
 }
@@ -2387,6 +2557,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 0
@@ -2399,7 +2570,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -2437,6 +2609,9 @@ layer {
 layer {
   name: "res3b5_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn3b5_branch2a"
   top: "bn3b5_branch2a"
 }
@@ -2450,6 +2625,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 0
@@ -2462,7 +2638,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -2500,6 +2677,9 @@ layer {
 layer {
   name: "res3b5_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn3b5_branch2b"
   top: "bn3b5_branch2b"
 }
@@ -2513,6 +2693,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 1
@@ -2525,7 +2706,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -2575,6 +2757,9 @@ layer {
 layer {
   name: "res3b5_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res3b5_branch2b_st"
   top: "res3b5_branch2b_st"
 }
@@ -2588,6 +2773,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 512
     bias_term: false
     pad: 0
@@ -2600,7 +2786,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -2648,6 +2835,9 @@ layer {
 layer {
   name: "res3b5_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res3b5"
   top: "res3b5"
 }
@@ -2661,6 +2851,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 0
@@ -2673,7 +2864,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -2711,6 +2903,9 @@ layer {
 layer {
   name: "res3b6_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn3b6_branch2a"
   top: "bn3b6_branch2a"
 }
@@ -2724,6 +2919,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 0
@@ -2736,7 +2932,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -2774,6 +2971,9 @@ layer {
 layer {
   name: "res3b6_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn3b6_branch2b"
   top: "bn3b6_branch2b"
 }
@@ -2787,6 +2987,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 1
@@ -2799,7 +3000,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -2837,6 +3039,9 @@ layer {
 layer {
   name: "res3b6_branch2b_t_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn3b6_branch2b_t"
   top: "bn3b6_branch2b_t"
 }
@@ -2850,6 +3055,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 512
     bias_term: false
     pad: 0
@@ -2862,7 +3068,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -2910,6 +3117,9 @@ layer {
 layer {
   name: "res3b6_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res3b6"
   top: "res3b6"
 }
@@ -2923,6 +3133,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 0
@@ -2935,7 +3146,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -2973,6 +3185,9 @@ layer {
 layer {
   name: "res3b7_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn3b7_branch2a"
   top: "bn3b7_branch2a"
 }
@@ -2986,6 +3201,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 0
@@ -2998,7 +3214,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -3036,6 +3253,9 @@ layer {
 layer {
   name: "res3b7_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn3b7_branch2b"
   top: "bn3b7_branch2b"
 }
@@ -3049,6 +3269,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 128
     bias_term: false
     pad: 1
@@ -3061,7 +3282,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -3111,6 +3333,9 @@ layer {
 layer {
   name: "res3b7_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res3b7_branch2b_st"
   top: "res3b7_branch2b_st"
 }
@@ -3124,6 +3349,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 512
     bias_term: false
     pad: 0
@@ -3136,7 +3362,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -3184,6 +3411,9 @@ layer {
 layer {
   name: "res3b7_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res3b7"
   top: "res3b7"
 }
@@ -3212,6 +3442,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -3224,7 +3455,8 @@ layer {
     stride: 2
     stride: 2
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -3269,6 +3501,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -3281,7 +3514,8 @@ layer {
     stride: 2
     stride: 2
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -3319,6 +3553,9 @@ layer {
 layer {
   name: "res4a_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4a_branch2a"
   top: "bn4a_branch2a"
 }
@@ -3332,6 +3569,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -3344,7 +3582,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -3382,6 +3621,9 @@ layer {
 layer {
   name: "res4a_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4a_branch2b"
   top: "bn4a_branch2b"
 }
@@ -3395,6 +3637,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -3407,7 +3650,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -3457,6 +3701,9 @@ layer {
 layer {
   name: "res4a_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4a_branch2b_st"
   top: "res4a_branch2b_st"
 }
@@ -3470,6 +3717,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -3482,7 +3730,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -3530,6 +3779,9 @@ layer {
 layer {
   name: "res4a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4a"
   top: "res4a"
 }
@@ -3543,6 +3795,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -3555,7 +3808,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -3593,6 +3847,9 @@ layer {
 layer {
   name: "res4b1_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b1_branch2a"
   top: "bn4b1_branch2a"
 }
@@ -3606,6 +3863,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -3618,7 +3876,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -3656,6 +3915,9 @@ layer {
 layer {
   name: "res4b1_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b1_branch2b"
   top: "bn4b1_branch2b"
 }
@@ -3669,6 +3931,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -3681,7 +3944,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -3719,6 +3983,9 @@ layer {
 layer {
   name: "res4b1_branch2b_t_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b1_branch2b_t"
   top: "bn4b1_branch2b_t"
 }
@@ -3732,6 +3999,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -3744,7 +4012,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -3792,6 +4061,9 @@ layer {
 layer {
   name: "res4b1_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b1"
   top: "res4b1"
 }
@@ -3805,6 +4077,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -3817,7 +4090,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -3855,6 +4129,9 @@ layer {
 layer {
   name: "res4b2_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b2_branch2a"
   top: "bn4b2_branch2a"
 }
@@ -3868,6 +4145,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -3880,7 +4158,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -3918,6 +4197,9 @@ layer {
 layer {
   name: "res4b2_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b2_branch2b"
   top: "bn4b2_branch2b"
 }
@@ -3931,6 +4213,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -3943,7 +4226,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -3993,6 +4277,9 @@ layer {
 layer {
   name: "res4b2_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b2_branch2b_st"
   top: "res4b2_branch2b_st"
 }
@@ -4006,6 +4293,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -4018,7 +4306,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -4066,6 +4355,9 @@ layer {
 layer {
   name: "res4b2_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b2"
   top: "res4b2"
 }
@@ -4079,6 +4371,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -4091,7 +4384,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -4129,6 +4423,9 @@ layer {
 layer {
   name: "res4b3_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b3_branch2a"
   top: "bn4b3_branch2a"
 }
@@ -4142,6 +4439,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -4154,7 +4452,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -4192,6 +4491,9 @@ layer {
 layer {
   name: "res4b3_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b3_branch2b"
   top: "bn4b3_branch2b"
 }
@@ -4205,6 +4507,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -4217,7 +4520,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -4267,6 +4571,9 @@ layer {
 layer {
   name: "res4b3_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b3_branch2b_st"
   top: "res4b3_branch2b_st"
 }
@@ -4280,6 +4587,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -4292,7 +4600,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -4340,6 +4649,9 @@ layer {
 layer {
   name: "res4b3_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b3"
   top: "res4b3"
 }
@@ -4353,6 +4665,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -4365,7 +4678,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -4403,6 +4717,9 @@ layer {
 layer {
   name: "res4b4_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b4_branch2a"
   top: "bn4b4_branch2a"
 }
@@ -4416,6 +4733,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -4428,7 +4746,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -4466,6 +4785,9 @@ layer {
 layer {
   name: "res4b4_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b4_branch2b"
   top: "bn4b4_branch2b"
 }
@@ -4479,6 +4801,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -4491,7 +4814,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -4529,6 +4853,9 @@ layer {
 layer {
   name: "res4b4_branch2b_t_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b4_branch2b_t"
   top: "bn4b4_branch2b_t"
 }
@@ -4542,6 +4869,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -4554,7 +4882,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -4602,6 +4931,9 @@ layer {
 layer {
   name: "res4b4_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b4"
   top: "res4b4"
 }
@@ -4615,6 +4947,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -4627,7 +4960,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -4665,6 +4999,9 @@ layer {
 layer {
   name: "res4b5_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b5_branch2a"
   top: "bn4b5_branch2a"
 }
@@ -4678,6 +5015,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -4690,7 +5028,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -4728,6 +5067,9 @@ layer {
 layer {
   name: "res4b5_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b5_branch2b"
   top: "bn4b5_branch2b"
 }
@@ -4741,6 +5083,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -4753,7 +5096,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -4803,6 +5147,9 @@ layer {
 layer {
   name: "res4b5_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b5_branch2b_st"
   top: "res4b5_branch2b_st"
 }
@@ -4816,6 +5163,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -4828,7 +5176,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -4876,6 +5225,9 @@ layer {
 layer {
   name: "res4b5_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b5"
   top: "res4b5"
 }
@@ -4889,6 +5241,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -4901,7 +5254,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -4939,6 +5293,9 @@ layer {
 layer {
   name: "res4b6_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b6_branch2a"
   top: "bn4b6_branch2a"
 }
@@ -4952,6 +5309,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -4964,7 +5322,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -5002,6 +5361,9 @@ layer {
 layer {
   name: "res4b6_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b6_branch2b"
   top: "bn4b6_branch2b"
 }
@@ -5015,6 +5377,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -5027,7 +5390,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -5077,6 +5441,9 @@ layer {
 layer {
   name: "res4b6_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b6_branch2b_st"
   top: "res4b6_branch2b_st"
 }
@@ -5090,6 +5457,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -5102,7 +5470,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -5150,6 +5519,9 @@ layer {
 layer {
   name: "res4b6_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b6"
   top: "res4b6"
 }
@@ -5163,6 +5535,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -5175,7 +5548,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -5213,6 +5587,9 @@ layer {
 layer {
   name: "res4b7_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b7_branch2a"
   top: "bn4b7_branch2a"
 }
@@ -5226,6 +5603,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -5238,7 +5616,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -5276,6 +5655,9 @@ layer {
 layer {
   name: "res4b7_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b7_branch2b"
   top: "bn4b7_branch2b"
 }
@@ -5289,6 +5671,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -5301,7 +5684,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -5339,6 +5723,9 @@ layer {
 layer {
   name: "res4b7_branch2b_t_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b7_branch2b_t"
   top: "bn4b7_branch2b_t"
 }
@@ -5352,6 +5739,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -5364,7 +5752,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -5412,6 +5801,9 @@ layer {
 layer {
   name: "res4b7_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b7"
   top: "res4b7"
 }
@@ -5425,6 +5817,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -5437,7 +5830,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -5475,6 +5869,9 @@ layer {
 layer {
   name: "res4b8_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b8_branch2a"
   top: "bn4b8_branch2a"
 }
@@ -5488,6 +5885,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -5500,7 +5898,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -5538,6 +5937,9 @@ layer {
 layer {
   name: "res4b8_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b8_branch2b"
   top: "bn4b8_branch2b"
 }
@@ -5551,6 +5953,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -5563,7 +5966,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -5613,6 +6017,9 @@ layer {
 layer {
   name: "res4b8_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b8_branch2b_st"
   top: "res4b8_branch2b_st"
 }
@@ -5626,6 +6033,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -5638,7 +6046,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -5686,6 +6095,9 @@ layer {
 layer {
   name: "res4b8_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b8"
   top: "res4b8"
 }
@@ -5699,6 +6111,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -5711,7 +6124,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -5749,6 +6163,9 @@ layer {
 layer {
   name: "res4b9_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b9_branch2a"
   top: "bn4b9_branch2a"
 }
@@ -5762,6 +6179,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -5774,7 +6192,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -5812,6 +6231,9 @@ layer {
 layer {
   name: "res4b9_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b9_branch2b"
   top: "bn4b9_branch2b"
 }
@@ -5825,6 +6247,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -5837,7 +6260,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -5887,6 +6311,9 @@ layer {
 layer {
   name: "res4b9_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b9_branch2b_st"
   top: "res4b9_branch2b_st"
 }
@@ -5900,6 +6327,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -5912,7 +6340,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -5960,6 +6389,9 @@ layer {
 layer {
   name: "res4b9_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b9"
   top: "res4b9"
 }
@@ -5973,6 +6405,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -5985,7 +6418,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -6023,6 +6457,9 @@ layer {
 layer {
   name: "res4b10_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b10_branch2a"
   top: "bn4b10_branch2a"
 }
@@ -6036,6 +6473,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -6048,7 +6486,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -6086,6 +6525,9 @@ layer {
 layer {
   name: "res4b10_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b10_branch2b"
   top: "bn4b10_branch2b"
 }
@@ -6099,6 +6541,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -6111,7 +6554,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -6149,6 +6593,9 @@ layer {
 layer {
   name: "res4b10_branch2b_t_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b10_branch2b_t"
   top: "bn4b10_branch2b_t"
 }
@@ -6162,6 +6609,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -6174,7 +6622,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -6222,6 +6671,9 @@ layer {
 layer {
   name: "res4b10_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b10"
   top: "res4b10"
 }
@@ -6235,6 +6687,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -6247,7 +6700,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -6285,6 +6739,9 @@ layer {
 layer {
   name: "res4b11_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b11_branch2a"
   top: "bn4b11_branch2a"
 }
@@ -6298,6 +6755,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -6310,7 +6768,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -6348,6 +6807,9 @@ layer {
 layer {
   name: "res4b11_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b11_branch2b"
   top: "bn4b11_branch2b"
 }
@@ -6361,6 +6823,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -6373,7 +6836,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -6423,6 +6887,9 @@ layer {
 layer {
   name: "res4b11_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b11_branch2b_st"
   top: "res4b11_branch2b_st"
 }
@@ -6436,6 +6903,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -6448,7 +6916,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -6496,6 +6965,9 @@ layer {
 layer {
   name: "res4b11_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b11"
   top: "res4b11"
 }
@@ -6509,6 +6981,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -6521,7 +6994,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -6559,6 +7033,9 @@ layer {
 layer {
   name: "res4b12_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b12_branch2a"
   top: "bn4b12_branch2a"
 }
@@ -6572,6 +7049,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -6584,7 +7062,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -6622,6 +7101,9 @@ layer {
 layer {
   name: "res4b12_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b12_branch2b"
   top: "bn4b12_branch2b"
 }
@@ -6635,6 +7117,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -6647,7 +7130,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -6697,6 +7181,9 @@ layer {
 layer {
   name: "res4b12_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b12_branch2b_st"
   top: "res4b12_branch2b_st"
 }
@@ -6710,6 +7197,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -6722,7 +7210,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -6770,6 +7259,9 @@ layer {
 layer {
   name: "res4b12_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b12"
   top: "res4b12"
 }
@@ -6783,6 +7275,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -6795,7 +7288,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -6833,6 +7327,9 @@ layer {
 layer {
   name: "res4b13_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b13_branch2a"
   top: "bn4b13_branch2a"
 }
@@ -6846,6 +7343,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -6858,7 +7356,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -6896,6 +7395,9 @@ layer {
 layer {
   name: "res4b13_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b13_branch2b"
   top: "bn4b13_branch2b"
 }
@@ -6909,6 +7411,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -6921,7 +7424,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -6959,6 +7463,9 @@ layer {
 layer {
   name: "res4b13_branch2b_t_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b13_branch2b_t"
   top: "bn4b13_branch2b_t"
 }
@@ -6972,6 +7479,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -6984,7 +7492,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -7032,6 +7541,9 @@ layer {
 layer {
   name: "res4b13_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b13"
   top: "res4b13"
 }
@@ -7045,6 +7557,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -7057,7 +7570,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -7095,6 +7609,9 @@ layer {
 layer {
   name: "res4b14_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b14_branch2a"
   top: "bn4b14_branch2a"
 }
@@ -7108,6 +7625,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -7120,7 +7638,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -7158,6 +7677,9 @@ layer {
 layer {
   name: "res4b14_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b14_branch2b"
   top: "bn4b14_branch2b"
 }
@@ -7171,6 +7693,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -7183,7 +7706,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -7233,6 +7757,9 @@ layer {
 layer {
   name: "res4b14_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b14_branch2b_st"
   top: "res4b14_branch2b_st"
 }
@@ -7246,6 +7773,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -7258,7 +7786,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -7306,6 +7835,9 @@ layer {
 layer {
   name: "res4b14_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b14"
   top: "res4b14"
 }
@@ -7319,6 +7851,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -7331,7 +7864,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -7369,6 +7903,9 @@ layer {
 layer {
   name: "res4b15_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b15_branch2a"
   top: "bn4b15_branch2a"
 }
@@ -7382,6 +7919,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -7394,7 +7932,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -7432,6 +7971,9 @@ layer {
 layer {
   name: "res4b15_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b15_branch2b"
   top: "bn4b15_branch2b"
 }
@@ -7445,6 +7987,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -7457,7 +8000,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -7507,6 +8051,9 @@ layer {
 layer {
   name: "res4b15_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b15_branch2b_st"
   top: "res4b15_branch2b_st"
 }
@@ -7520,6 +8067,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -7532,7 +8080,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -7580,6 +8129,9 @@ layer {
 layer {
   name: "res4b15_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b15"
   top: "res4b15"
 }
@@ -7593,6 +8145,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -7605,7 +8158,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -7643,6 +8197,9 @@ layer {
 layer {
   name: "res4b16_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b16_branch2a"
   top: "bn4b16_branch2a"
 }
@@ -7656,6 +8213,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -7668,7 +8226,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -7706,6 +8265,9 @@ layer {
 layer {
   name: "res4b16_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b16_branch2b"
   top: "bn4b16_branch2b"
 }
@@ -7719,6 +8281,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -7731,7 +8294,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -7769,6 +8333,9 @@ layer {
 layer {
   name: "res4b16_branch2b_t_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b16_branch2b_t"
   top: "bn4b16_branch2b_t"
 }
@@ -7782,6 +8349,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -7794,7 +8362,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -7842,6 +8411,9 @@ layer {
 layer {
   name: "res4b16_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b16"
   top: "res4b16"
 }
@@ -7855,6 +8427,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -7867,7 +8440,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -7905,6 +8479,9 @@ layer {
 layer {
   name: "res4b17_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b17_branch2a"
   top: "bn4b17_branch2a"
 }
@@ -7918,6 +8495,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -7930,7 +8508,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -7968,6 +8547,9 @@ layer {
 layer {
   name: "res4b17_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b17_branch2b"
   top: "bn4b17_branch2b"
 }
@@ -7981,6 +8563,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -7993,7 +8576,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -8043,6 +8627,9 @@ layer {
 layer {
   name: "res4b17_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b17_branch2b_st"
   top: "res4b17_branch2b_st"
 }
@@ -8056,6 +8643,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -8068,7 +8656,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -8116,6 +8705,9 @@ layer {
 layer {
   name: "res4b17_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b17"
   top: "res4b17"
 }
@@ -8129,6 +8721,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -8141,7 +8734,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -8179,6 +8773,9 @@ layer {
 layer {
   name: "res4b18_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b18_branch2a"
   top: "bn4b18_branch2a"
 }
@@ -8192,6 +8789,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -8204,7 +8802,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -8242,6 +8841,9 @@ layer {
 layer {
   name: "res4b18_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b18_branch2b"
   top: "bn4b18_branch2b"
 }
@@ -8255,6 +8857,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -8267,7 +8870,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -8317,6 +8921,9 @@ layer {
 layer {
   name: "res4b18_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b18_branch2b_st"
   top: "res4b18_branch2b_st"
 }
@@ -8330,6 +8937,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -8342,7 +8950,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -8390,6 +8999,9 @@ layer {
 layer {
   name: "res4b18_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b18"
   top: "res4b18"
 }
@@ -8403,6 +9015,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -8415,7 +9028,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -8453,6 +9067,9 @@ layer {
 layer {
   name: "res4b19_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b19_branch2a"
   top: "bn4b19_branch2a"
 }
@@ -8466,6 +9083,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -8478,7 +9096,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -8516,6 +9135,9 @@ layer {
 layer {
   name: "res4b19_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b19_branch2b"
   top: "bn4b19_branch2b"
 }
@@ -8529,6 +9151,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -8541,7 +9164,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -8579,6 +9203,9 @@ layer {
 layer {
   name: "res4b19_branch2b_t_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b19_branch2b_t"
   top: "bn4b19_branch2b_t"
 }
@@ -8592,6 +9219,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -8604,7 +9232,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -8652,6 +9281,9 @@ layer {
 layer {
   name: "res4b19_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b19"
   top: "res4b19"
 }
@@ -8665,6 +9297,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -8677,7 +9310,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -8715,6 +9349,9 @@ layer {
 layer {
   name: "res4b20_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b20_branch2a"
   top: "bn4b20_branch2a"
 }
@@ -8728,6 +9365,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -8740,7 +9378,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -8778,6 +9417,9 @@ layer {
 layer {
   name: "res4b20_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b20_branch2b"
   top: "bn4b20_branch2b"
 }
@@ -8791,6 +9433,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -8803,7 +9446,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -8853,6 +9497,9 @@ layer {
 layer {
   name: "res4b20_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b20_branch2b_st"
   top: "res4b20_branch2b_st"
 }
@@ -8866,6 +9513,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -8878,7 +9526,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -8926,6 +9575,9 @@ layer {
 layer {
   name: "res4b20_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b20"
   top: "res4b20"
 }
@@ -8939,6 +9591,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -8951,7 +9604,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -8989,6 +9643,9 @@ layer {
 layer {
   name: "res4b21_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b21_branch2a"
   top: "bn4b21_branch2a"
 }
@@ -9002,6 +9659,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -9014,7 +9672,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -9052,6 +9711,9 @@ layer {
 layer {
   name: "res4b21_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b21_branch2b"
   top: "bn4b21_branch2b"
 }
@@ -9065,6 +9727,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -9077,7 +9740,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -9127,6 +9791,9 @@ layer {
 layer {
   name: "res4b21_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b21_branch2b_st"
   top: "res4b21_branch2b_st"
 }
@@ -9140,6 +9807,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -9152,7 +9820,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -9200,6 +9869,9 @@ layer {
 layer {
   name: "res4b21_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b21"
   top: "res4b21"
 }
@@ -9213,6 +9885,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -9225,7 +9898,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -9263,6 +9937,9 @@ layer {
 layer {
   name: "res4b22_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b22_branch2a"
   top: "bn4b22_branch2a"
 }
@@ -9276,6 +9953,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -9288,7 +9966,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -9326,6 +10005,9 @@ layer {
 layer {
   name: "res4b22_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b22_branch2b"
   top: "bn4b22_branch2b"
 }
@@ -9339,6 +10021,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -9351,7 +10034,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -9389,6 +10073,9 @@ layer {
 layer {
   name: "res4b22_branch2b_t_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b22_branch2b_t"
   top: "bn4b22_branch2b_t"
 }
@@ -9402,6 +10089,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -9414,7 +10102,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -9462,6 +10151,9 @@ layer {
 layer {
   name: "res4b22_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b22"
   top: "res4b22"
 }
@@ -9475,6 +10167,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -9487,7 +10180,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -9525,6 +10219,9 @@ layer {
 layer {
   name: "res4b23_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b23_branch2a"
   top: "bn4b23_branch2a"
 }
@@ -9538,6 +10235,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -9550,7 +10248,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -9588,6 +10287,9 @@ layer {
 layer {
   name: "res4b23_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b23_branch2b"
   top: "bn4b23_branch2b"
 }
@@ -9601,6 +10303,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -9613,7 +10316,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -9663,6 +10367,9 @@ layer {
 layer {
   name: "res4b23_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b23_branch2b_st"
   top: "res4b23_branch2b_st"
 }
@@ -9676,6 +10383,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -9688,7 +10396,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -9736,6 +10445,9 @@ layer {
 layer {
   name: "res4b23_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b23"
   top: "res4b23"
 }
@@ -9749,6 +10461,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -9761,7 +10474,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -9799,6 +10513,9 @@ layer {
 layer {
   name: "res4b24_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b24_branch2a"
   top: "bn4b24_branch2a"
 }
@@ -9812,6 +10529,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -9824,7 +10542,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -9862,6 +10581,9 @@ layer {
 layer {
   name: "res4b24_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b24_branch2b"
   top: "bn4b24_branch2b"
 }
@@ -9875,6 +10597,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -9887,7 +10610,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -9937,6 +10661,9 @@ layer {
 layer {
   name: "res4b24_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b24_branch2b_st"
   top: "res4b24_branch2b_st"
 }
@@ -9950,6 +10677,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -9962,7 +10690,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -10010,6 +10739,9 @@ layer {
 layer {
   name: "res4b24_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b24"
   top: "res4b24"
 }
@@ -10023,6 +10755,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -10035,7 +10768,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -10073,6 +10807,9 @@ layer {
 layer {
   name: "res4b25_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b25_branch2a"
   top: "bn4b25_branch2a"
 }
@@ -10086,6 +10823,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -10098,7 +10836,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -10136,6 +10875,9 @@ layer {
 layer {
   name: "res4b25_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b25_branch2b"
   top: "bn4b25_branch2b"
 }
@@ -10149,6 +10891,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -10161,7 +10904,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -10199,6 +10943,9 @@ layer {
 layer {
   name: "res4b25_branch2b_t_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b25_branch2b_t"
   top: "bn4b25_branch2b_t"
 }
@@ -10212,6 +10959,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -10224,7 +10972,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -10272,6 +11021,9 @@ layer {
 layer {
   name: "res4b25_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b25"
   top: "res4b25"
 }
@@ -10285,6 +11037,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -10297,7 +11050,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -10335,6 +11089,9 @@ layer {
 layer {
   name: "res4b26_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b26_branch2a"
   top: "bn4b26_branch2a"
 }
@@ -10348,6 +11105,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -10360,7 +11118,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -10398,6 +11157,9 @@ layer {
 layer {
   name: "res4b26_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b26_branch2b"
   top: "bn4b26_branch2b"
 }
@@ -10411,6 +11173,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -10423,7 +11186,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -10473,6 +11237,9 @@ layer {
 layer {
   name: "res4b26_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b26_branch2b_st"
   top: "res4b26_branch2b_st"
 }
@@ -10486,6 +11253,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -10498,7 +11266,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -10546,6 +11315,9 @@ layer {
 layer {
   name: "res4b26_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b26"
   top: "res4b26"
 }
@@ -10559,6 +11331,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -10571,7 +11344,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -10609,6 +11383,9 @@ layer {
 layer {
   name: "res4b27_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b27_branch2a"
   top: "bn4b27_branch2a"
 }
@@ -10622,6 +11399,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -10634,7 +11412,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -10672,6 +11451,9 @@ layer {
 layer {
   name: "res4b27_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b27_branch2b"
   top: "bn4b27_branch2b"
 }
@@ -10685,6 +11467,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -10697,7 +11480,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -10747,6 +11531,9 @@ layer {
 layer {
   name: "res4b27_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b27_branch2b_st"
   top: "res4b27_branch2b_st"
 }
@@ -10760,6 +11547,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -10772,7 +11560,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -10820,6 +11609,9 @@ layer {
 layer {
   name: "res4b27_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b27"
   top: "res4b27"
 }
@@ -10833,6 +11625,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -10845,7 +11638,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -10883,6 +11677,9 @@ layer {
 layer {
   name: "res4b28_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b28_branch2a"
   top: "bn4b28_branch2a"
 }
@@ -10896,6 +11693,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -10908,7 +11706,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -10946,6 +11745,9 @@ layer {
 layer {
   name: "res4b28_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b28_branch2b"
   top: "bn4b28_branch2b"
 }
@@ -10959,6 +11761,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -10971,7 +11774,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -11009,6 +11813,9 @@ layer {
 layer {
   name: "res4b28_branch2b_t_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b28_branch2b_t"
   top: "bn4b28_branch2b_t"
 }
@@ -11022,6 +11829,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -11034,7 +11842,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -11082,6 +11891,9 @@ layer {
 layer {
   name: "res4b28_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b28"
   top: "res4b28"
 }
@@ -11095,6 +11907,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -11107,7 +11920,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -11145,6 +11959,9 @@ layer {
 layer {
   name: "res4b29_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b29_branch2a"
   top: "bn4b29_branch2a"
 }
@@ -11158,6 +11975,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -11170,7 +11988,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -11208,6 +12027,9 @@ layer {
 layer {
   name: "res4b29_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b29_branch2b"
   top: "bn4b29_branch2b"
 }
@@ -11221,6 +12043,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -11233,7 +12056,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -11283,6 +12107,9 @@ layer {
 layer {
   name: "res4b29_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b29_branch2b_st"
   top: "res4b29_branch2b_st"
 }
@@ -11296,6 +12123,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -11308,7 +12136,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -11356,6 +12185,9 @@ layer {
 layer {
   name: "res4b29_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b29"
   top: "res4b29"
 }
@@ -11369,6 +12201,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -11381,7 +12214,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -11419,6 +12253,9 @@ layer {
 layer {
   name: "res4b30_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b30_branch2a"
   top: "bn4b30_branch2a"
 }
@@ -11432,6 +12269,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -11444,7 +12282,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -11482,6 +12321,9 @@ layer {
 layer {
   name: "res4b30_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b30_branch2b"
   top: "bn4b30_branch2b"
 }
@@ -11495,6 +12337,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -11507,7 +12350,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -11557,6 +12401,9 @@ layer {
 layer {
   name: "res4b30_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b30_branch2b_st"
   top: "res4b30_branch2b_st"
 }
@@ -11570,6 +12417,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -11582,7 +12430,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -11630,6 +12479,9 @@ layer {
 layer {
   name: "res4b30_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b30"
   top: "res4b30"
 }
@@ -11643,6 +12495,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -11655,7 +12508,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -11693,6 +12547,9 @@ layer {
 layer {
   name: "res4b31_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b31_branch2a"
   top: "bn4b31_branch2a"
 }
@@ -11706,6 +12563,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -11718,7 +12576,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -11756,6 +12615,9 @@ layer {
 layer {
   name: "res4b31_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b31_branch2b"
   top: "bn4b31_branch2b"
 }
@@ -11769,6 +12631,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -11781,7 +12644,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -11819,6 +12683,9 @@ layer {
 layer {
   name: "res4b31_branch2b_t_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b31_branch2b_t"
   top: "bn4b31_branch2b_t"
 }
@@ -11832,6 +12699,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -11844,7 +12712,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -11892,6 +12761,9 @@ layer {
 layer {
   name: "res4b31_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b31"
   top: "res4b31"
 }
@@ -11905,6 +12777,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -11917,7 +12790,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -11955,6 +12829,9 @@ layer {
 layer {
   name: "res4b32_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b32_branch2a"
   top: "bn4b32_branch2a"
 }
@@ -11968,6 +12845,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -11980,7 +12858,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -12018,6 +12897,9 @@ layer {
 layer {
   name: "res4b32_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b32_branch2b"
   top: "bn4b32_branch2b"
 }
@@ -12031,6 +12913,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -12043,7 +12926,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -12093,6 +12977,9 @@ layer {
 layer {
   name: "res4b32_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b32_branch2b_st"
   top: "res4b32_branch2b_st"
 }
@@ -12106,6 +12993,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -12118,7 +13006,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -12166,6 +13055,9 @@ layer {
 layer {
   name: "res4b32_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b32"
   top: "res4b32"
 }
@@ -12179,6 +13071,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -12191,7 +13084,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -12229,6 +13123,9 @@ layer {
 layer {
   name: "res4b33_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b33_branch2a"
   top: "bn4b33_branch2a"
 }
@@ -12242,6 +13139,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -12254,7 +13152,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -12292,6 +13191,9 @@ layer {
 layer {
   name: "res4b33_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b33_branch2b"
   top: "bn4b33_branch2b"
 }
@@ -12305,6 +13207,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -12317,7 +13220,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -12367,6 +13271,9 @@ layer {
 layer {
   name: "res4b33_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b33_branch2b_st"
   top: "res4b33_branch2b_st"
 }
@@ -12380,6 +13287,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -12392,7 +13300,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -12440,6 +13349,9 @@ layer {
 layer {
   name: "res4b33_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b33"
   top: "res4b33"
 }
@@ -12453,6 +13365,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -12465,7 +13378,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -12503,6 +13417,9 @@ layer {
 layer {
   name: "res4b34_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b34_branch2a"
   top: "bn4b34_branch2a"
 }
@@ -12516,6 +13433,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -12528,7 +13446,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -12566,6 +13485,9 @@ layer {
 layer {
   name: "res4b34_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b34_branch2b"
   top: "bn4b34_branch2b"
 }
@@ -12579,6 +13501,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -12591,7 +13514,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -12629,6 +13553,9 @@ layer {
 layer {
   name: "res4b34_branch2b_t_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b34_branch2b_t"
   top: "bn4b34_branch2b_t"
 }
@@ -12642,6 +13569,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -12654,7 +13582,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -12702,6 +13631,9 @@ layer {
 layer {
   name: "res4b34_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b34"
   top: "res4b34"
 }
@@ -12715,6 +13647,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -12727,7 +13660,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -12765,6 +13699,9 @@ layer {
 layer {
   name: "res4b35_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b35_branch2a"
   top: "bn4b35_branch2a"
 }
@@ -12778,6 +13715,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 0
@@ -12790,7 +13728,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -12828,6 +13767,9 @@ layer {
 layer {
   name: "res4b35_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn4b35_branch2b"
   top: "bn4b35_branch2b"
 }
@@ -12841,6 +13783,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 256
     bias_term: false
     pad: 1
@@ -12853,7 +13796,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -12903,6 +13847,9 @@ layer {
 layer {
   name: "res4b35_branch2b_st_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b35_branch2b_st"
   top: "res4b35_branch2b_st"
 }
@@ -12916,6 +13863,7 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 1024
     bias_term: false
     pad: 0
@@ -12928,7 +13876,8 @@ layer {
     stride: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -12976,6 +13925,9 @@ layer {
 layer {
   name: "res4b35_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res4b35"
   top: "res4b35"
 }
@@ -13018,13 +13970,15 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 2048
     bias_term: false
     pad: 0
     kernel_size: 1
     stride: 2
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -13069,13 +14023,15 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 512
     bias_term: false
     pad: 0
     kernel_size: 1
     stride: 2
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -13113,6 +14069,9 @@ layer {
 layer {
   name: "res5a_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn5a_branch2a"
   top: "bn5a_branch2a"
 }
@@ -13126,13 +14085,15 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 512
     bias_term: false
     pad: 1
     kernel_size: 3
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -13170,6 +14131,9 @@ layer {
 layer {
   name: "res5a_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn5a_branch2b"
   top: "bn5a_branch2b"
 }
@@ -13183,13 +14147,15 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 2048
     bias_term: false
     pad: 0
     kernel_size: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -13237,6 +14203,9 @@ layer {
 layer {
   name: "res5a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res5a"
   top: "res5a"
 }
@@ -13250,13 +14219,15 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 512
     bias_term: false
     pad: 0
     kernel_size: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -13294,6 +14265,9 @@ layer {
 layer {
   name: "res5b_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn5b_branch2a"
   top: "bn5b_branch2a"
 }
@@ -13307,13 +14281,15 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 512
     bias_term: false
     pad: 1
     kernel_size: 3
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -13351,6 +14327,9 @@ layer {
 layer {
   name: "res5b_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn5b_branch2b"
   top: "bn5b_branch2b"
 }
@@ -13364,13 +14343,15 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 2048
     bias_term: false
     pad: 0
     kernel_size: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -13418,6 +14399,9 @@ layer {
 layer {
   name: "res5b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res5b"
   top: "res5b"
 }
@@ -13431,13 +14415,15 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 512
     bias_term: false
     pad: 0
     kernel_size: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -13475,6 +14461,9 @@ layer {
 layer {
   name: "res5c_branch2a_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn5c_branch2a"
   top: "bn5c_branch2a"
 }
@@ -13488,13 +14477,15 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 512
     bias_term: false
     pad: 1
     kernel_size: 3
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -13532,6 +14523,9 @@ layer {
 layer {
   name: "res5c_branch2b_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "bn5c_branch2b"
   top: "bn5c_branch2b"
 }
@@ -13545,13 +14539,15 @@ layer {
     decay_mult: 1
   }
   convolution_param {
+    engine: CAFFE
     num_output: 2048
     bias_term: false
     pad: 0
     kernel_size: 1
     stride: 1
     weight_filler {
-      type: "xavier"
+      type: "gaussian"
+      std: 0.001
     }
   }
 }
@@ -13599,6 +14595,9 @@ layer {
 layer {
   name: "res5c_relu"
   type: "ReLU"
+  relu_param {
+    engine:CAFFE
+  }
   bottom: "res5c"
   top: "res5c"
 }

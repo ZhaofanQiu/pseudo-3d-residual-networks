@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <vector>
 
-#include "caffe/video_layers/bn_layer.hpp"
+#include "caffe/layers/bn_layer.hpp"
 #include "caffe/util/math_functions.hpp"
 
 namespace caffe {

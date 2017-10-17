@@ -2,7 +2,7 @@
 #include <vector>
 
 #include "caffe/filler.hpp"
-#include "caffe/video_layers/bn_layer.hpp"
+#include "caffe/layers/bn_layer.hpp"
 #include "caffe/util/math_functions.hpp"
 
 namespace caffe {
@@ -345,4 +345,5 @@ namespace caffe {
 #endif
 
 	INSTANTIATE_CLASS(BNLayer);
+	REGISTER_LAYER_CLASS(BN);
 }  // namespace caffe

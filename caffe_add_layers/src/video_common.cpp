@@ -11,7 +11,7 @@
 #include <utility>
 #include <vector>
 
-#include "caffe/video_layers/video_common.hpp"
+#include "caffe/layers/video_common.hpp"
 
 namespace caffe {
 	using namespace std;

@@ -11,7 +11,7 @@
 #include <utility>
 #include <vector>
 
-#include "caffe/video_layers/pooling3d_layer.hpp"
+#include "caffe/layers/pooling3d_layer.hpp"
 
 namespace caffe {
 
