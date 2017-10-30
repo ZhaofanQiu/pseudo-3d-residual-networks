@@ -30,8 +30,9 @@ If you use these models in your research, please cite:
 0. We implement the P3D ResNet using our modified Caffe on Windows platform. For fast utilization of our model, here we give the addtional layers used in the network. So you can easily add these layers to your own Caffe branch or [Caffe master branch](https://github.com/BVLC/caffe) to support P3D ResNet.
 0. In the P3D ResNet, all the blobs are 5D-blobs (num, channels, length, height, width). Some layers in early-version Caffe may only support 4D blobs due to the use of Blob<Dtype>::num(), Blob<Dtype>::channels(), Blob<Dtype>::height() and Blob<Dtype>::width(). You may need to replace these callings with Blob<Dtype>::shape(i).
 0. When training the network, to speedup the network and reduce the memory demand, we use cudnn implementation for conv_layer, relu_layer, bn_layer.
-0. P3D ResNet for optical flow stream, ResNext/DenseNet/SENet with P3D convolution and P3D ResNet with lighter weights are in the plan.
+0. P3D ResNet for ResNext/DenseNet/SENet with P3D convolution and P3D ResNet with lighter weights are in the plan.
 0. Our custom Caffe and training/finetuning setting files will be pulic soon.
+0. The mean value for each frame is [104, 117, 123], for each optical flow image is 128. For TVL1 optical flow, we merge the x & y direction grey-level flow image as two-channel image.
 
 ### Models
 0. P3D ResNet trained on Sports-1M dataset:
@@ -39,6 +40,9 @@ If you use these models in your research, please cite:
     
 0. P3D Resnet trained on Kinetics dataset:
 	- [OneDrive download](https://1drv.ms/f/s!ApyV7qxhN8CmuEAUq95ZgyrjRvNU)
+
+0. P3D ResNet trianed on Kinetics Optical Flow (TVL1):
+	- [OneDrive download](https://1drv.ms/f/s!ApyV7qxhN8CmvWIeREkw7wdOkCkY)
     
 ## Results
 Please refer to our paper for detailed results.
