@@ -7,9 +7,9 @@ Microsoft Research Asia (MSRA).
 ### Table of Contents
 0. [Introduction](#introduction)
 0. [Citation](#citation)
-0. [Implementation](#disclaimer-and-known-issues)
+0. [Implementation](#implementation)
 0. [Models](#models)
-0. [Results](#results)
+0. [Other Implementation](#other-implementation)
 0. [Contact](#contact)
 
 ### Introduction
@@ -36,16 +36,15 @@ If you use these models in your research, please cite:
 
 ### Models
 0. P3D ResNet trained on Sports-1M dataset:
-	- [OneDrive download](https://1drv.ms/f/s!ApyV7qxhN8CmuD1Psuxnuo_vn01V)
+	- [Frame](https://1drv.ms/f/s!ApyV7qxhN8CmuD1Psuxnuo_vn01V)
     
 0. P3D Resnet trained on Kinetics dataset:
-	- [OneDrive download](https://1drv.ms/f/s!ApyV7qxhN8CmuEAUq95ZgyrjRvNU)
-
-0. P3D ResNet trianed on Kinetics Optical Flow (TVL1):
-	- [OneDrive download](https://1drv.ms/f/s!ApyV7qxhN8CmvWIeREkw7wdOkCkY)
+	- [Frame](https://1drv.ms/f/s!ApyV7qxhN8CmuEAUq95ZgyrjRvNU) 
+	- [Flow(TVL1)](https://1drv.ms/f/s!ApyV7qxhN8CmvWIeREkw7wdOkCkY)
+	
     
-## Results
-Please refer to our paper for detailed results.
+## Other Implementation
+0. [P3D-Pytorch](https://github.com/qijiezhao/pseudo-3d-pytorch) by qijiezhao
 
 ## Contact
 If there is any question, pls feel free to contact me at zhaofanqiu@gmail.com.
